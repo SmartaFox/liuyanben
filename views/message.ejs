@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+    <style>
+        p{
+            line-height: 20px;
+        }
+        .text{
+            display: block;
+            margin-top: 10px;
+        }
+        input[type=submit]{
+            margin-left: 180px;
+        }
+    </style>
+
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<form class="form-inline" action="#" method="post">
+    <div class="form-group">
+        <label for="exampleInputName2">Name</label>
+        <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe" name="name">
+    </div>
+    <div class="text">
+        <label for="exampleInputName2">Message</label>
+    <textarea  class="form-control" rows="5" name="message"></textarea>
+    </div>
+    <input type="submit" value="确定"  class="btn btn-default">
+</form>
+<% if(docs[0]){%>
+<%for(var i=0;i<docs.length;i++){%>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="input-group">
+      <span class="input-group-addon">
+      </span>
+            <p class="text-success">【姓名】 <%=docs[i].name%></p>
+        </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="input-group">
+      <span class="input-group-addon">
+      </span>
+            <p class="text-info">【留言】 <%=docs[i].messags%></p>
+        </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="input-group">
+      <span class="input-group-addon">
+      </span>
+            <p class="text-primary">【时间】 <%=docs[i].time%></p>
+        </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+</div>
+<a href="/<%= docs[i]._id %>">删除</a>
+<%}%>
+<%}%>
+
+</body>
+<script src="/js/jquery-1.6.2.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</html>
